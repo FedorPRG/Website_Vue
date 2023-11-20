@@ -1,0 +1,33 @@
+@import "./vars";
+.breadcrumbs {
+  &__ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__li:not(:last-child) ::after {
+    content: "/";
+    padding: 0 10px;
+  }
+
+  &__link {
+    color: $textColor;
+    font-family: "Jost", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 33px */
+    letter-spacing: 0.22px;
+
+    &:hover {
+      color: $indicatorColor;
+    }
+  }
+
+  &__li:last-child > a {
+    color: $indicatorColor !important;
+  }
+}

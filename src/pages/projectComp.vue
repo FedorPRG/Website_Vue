@@ -150,13 +150,14 @@ p {
 }
 
 .banner {
-  margin-top: 45px;
+  // margin-top: 45px;
   height: 356px;
   background: url(../assets/project-banner.png) no-repeat center;
   padding-top: 178px;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   &__titleBack {
     width: 503px;

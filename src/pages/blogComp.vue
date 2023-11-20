@@ -15,7 +15,7 @@
     <blogLatestPostCom />
     <section class="articles center">
       <h1 class="articles__title">Articles & News</h1>
-      <blogArticlesCom :articles="articles" />
+      <blogArticlesCom :articles="getArticles" />
       <div class="paganation">
         <div class="paganation__wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
@@ -64,45 +64,48 @@ export default {
   },
   data () {
     return {
-      articles: [
-        {
-          img: require('../assets/blog-article1.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Let’s Get Solution For Building Construction Work',
-          data: '26 December,2022'
-        },
-        {
-          img: require('../assets/blog-article2.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Low Cost Latest Invented Interior Designing <br> Ideas.',
-          data: '22 December,2022'
-        },
-        {
-          img: require('../assets/blog-article3.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Best For Any Office & Business Interior Solution',
-          data: '25 December,2022'
-        },
-        {
-          img: require('../assets/blog-article4.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Let’s Get Solution For Building Construction Work',
-          data: '26 December,2022'
-        },
-        {
-          img: require('../assets/blog-article5.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Low Cost Latest Invented Interior Designing <br> Ideas.',
-          data: '22 December,2022'
-        },
-        {
-          img: require('../assets/blog-article6.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Best For Any Office & Business Interior Solution',
-          data: '25 December,2022'
-        }
-      ]
+      // articles: [
+      //   {
+      //     img: require('../assets/blog-article1.png'),
+      //     tag: require('../assets/tag1.png'),
+      //     name: 'Let’s Get Solution For Building Construction Work',
+      //     data: '26 December,2022'
+      //   },
+      //   {
+      //     img: require('../assets/blog-article2.png'),
+      //     tag: require('../assets/tag1.png'),
+      //     name: 'Low Cost Latest Invented Interior Designing <br> Ideas.',
+      //     data: '22 December,2022'
+      //   },
+      //   {
+      //     img: require('../assets/blog-article3.png'),
+      //     tag: require('../assets/tag1.png'),
+      //     name: 'Best For Any Office & Business Interior Solution',
+      //     data: '25 December,2022'
+      //   },
+      //   {
+      //     img: require('../assets/blog-article4.png'),
+      //     tag: require('../assets/tag1.png'),
+      //     name: 'Let’s Get Solution For Building Construction Work',
+      //     data: '26 December,2022'
+      //   },
+      //   {
+      //     img: require('../assets/blog-article5.png'),
+      //     tag: require('../assets/tag1.png'),
+      //     name: 'Low Cost Latest Invented Interior Designing <br> Ideas.',
+      //     data: '22 December,2022'
+      //   },
+      //   {
+      //     img: require('../assets/blog-article6.png'),
+      //     tag: require('../assets/tag1.png'),
+      //     name: 'Best For Any Office & Business Interior Solution',
+      //     data: '25 December,2022'
+      //   }
+      // ]
     }
+  },
+  computed: {
+    getArticles () { return this.$store.getters.getArticles }
   }
 }
 </script>
@@ -128,13 +131,14 @@ p {
 }
 
 .banner {
-  margin-top: 45px;
+  // margin-top: 45px;
   height: 356px;
   background: url(../assets/blog-banner.png) no-repeat center;
   padding-top: 178px;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   &__titleBack {
     width: 503px;

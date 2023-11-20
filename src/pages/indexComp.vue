@@ -21,11 +21,11 @@
       <p class="projects__text">It is a long established fact that a reader will be distracted by the of readable <br>
         content of page lookings at
         its layouts points.</p>
-      <indexProjectsCom :projects="projects" />
+      <indexProjectsCom :projects="getProjects" />
     </section>
-    <indexIndicatorsCom :indicators="indicators" />
-    <indexArticlesCom :articles="articles" />
-    <footerCom :indicators="indicators" />
+    <indexIndicatorsCom :indicators="getIndicators" />
+    <indexArticlesCom :articles="getArticles" />
+    <footerCom />
   </div>
 </template>
 
@@ -40,52 +40,6 @@ export default {
   name: 'indexComp',
   data () {
     return {
-      projects: [{
-        img: require('../assets/index-item1.png'),
-        name: 'Minimal Bedroom',
-        discription: 'Decor / Artchitecture'
-      }, {
-        img: require('../assets/index-item2.png'),
-        name: 'Minimal Bedroom',
-        discription: 'Decor / Artchitecture'
-      }, {
-        img: require('../assets/index-item3.png'),
-        name: 'Minimal Bedroom',
-        discription: 'Decor / Artchitecture'
-      }, {
-        img: require('../assets/index-item4.png'),
-        name: 'Minimal Bedroom',
-        discription: 'Decor / Artchitecture'
-      }],
-      indicators: [{
-        quantity: '12',
-        name: 'Years Of Experiance'
-      }, {
-        quantity: '85',
-        name: 'Success Project'
-      }, {
-        quantity: '15',
-        name: 'Active Project'
-      }, {
-        quantity: '95',
-        name: 'Happy CUstomers'
-      }],
-      articles: [{
-        img: require('../assets/index-article1.png'),
-        imgTag: require('../assets/tag1.png'),
-        name: 'Let’s Get Solution For Building Construction Work',
-        data: '26 December,2022'
-      }, {
-        img: require('../assets/index-article2.png'),
-        imgTag: require('../assets/tag2.png'),
-        name: 'Low Cost Latest Invented Interior Designing Ideas.',
-        data: '22 December,2022'
-      }, {
-        img: require('../assets/index-article3.png'),
-        imgTag: require('../assets/tag3.png'),
-        name: 'Best For Any Office & Business Interior Solution',
-        data: '25 December,2022'
-      }]
     }
   },
   components: {
@@ -94,6 +48,11 @@ export default {
     indexProjectsCom,
     indexIndicatorsCom,
     indexArticlesCom
+  },
+  computed: {
+    getProjects () { return this.$store.getters.getProjects },
+    getIndicators () { return this.$store.getters.getIndicators },
+    getArticles () { return this.$store.getters.getArticlesIndex }
   }
 }
 </script>

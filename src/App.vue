@@ -1,28 +1,22 @@
 <template>
   <div id="app">
-    <headerCom />
+    <headerCom/>
     <router-view/>
   </div>
 </template>
 
 <script>
 import headerCom from './components/headerCom.vue'
-import { mapState, mapGetters, mapMutations } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'App',
   components: {
     headerCom
   },
-  methods: {
-    nextSlider () {
-      this.NEXT_SLIDER()
-    },
-    ...mapMutations(['NEXT_SLIDER'])
-  },
   computed: {
     ...mapState(['title', 'text', 'currentSlider', 'slider']),
-    ...mapGetters(['getSlider'])
+    ...mapGetters(['getSlider', 'getProjectsIndex', 'getProjects', 'getIndicators', 'getArticlesIndex'])
   }
 }
 </script>
@@ -30,14 +24,14 @@ export default {
 <style lang="scss">
 @import "./assets/style/vars";
 
-// * {
-//   box-sizing: border-box;
-// }
+* {
+  box-sizing: border-box;
+}
 
 #app {
   // img {
   //   display: block;
-  // }
+ //  }
 
   a {
     text-decoration: none;

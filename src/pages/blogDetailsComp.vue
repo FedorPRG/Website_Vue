@@ -117,7 +117,7 @@ p {
 }
 
 .banner {
-  margin-top: 45px;
+  // margin-top: 45px;
   height: 351px;
   background: url(../assets/blogDetails-banner.png) no-repeat center;
   padding-top: 178px;

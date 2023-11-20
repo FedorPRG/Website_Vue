@@ -19,6 +19,7 @@
 
 // import headerCom from '../components/headerCom.vue'
 import footerCom from '../components/footerCom.vue'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'projectDetailsComp',
@@ -28,9 +29,9 @@ export default {
   },
   methods: {
     nextSlider () {
-      console.log(12)
-      this.$emit('nextSlider')
-    }
+      this.NEXT_SLIDER()
+    },
+    ...mapMutations(['NEXT_SLIDER'])
   },
   computed: {
     title () { return this.$store.state.title },
@@ -82,7 +83,8 @@ p {
 }
 
 .banner {
-  margin-top: 45px;
+  // margin-top: 45px;
+  padding-top: 178px;
   height: 351px;
   background: url(../assets/projectDetails-banner.png) no-repeat center;
 
